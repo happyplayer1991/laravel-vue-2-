@@ -34,7 +34,10 @@
     },
     methods: {
       addPost() {
-        console.log(this.post);
+        let uri = 'http://localhost:82/api/post/create';
+        this.axios.post(uri, this.post).then(response => {
+          this.$router.push({name: 'posts'});
+        });
       }
     },
   }
